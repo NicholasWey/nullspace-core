@@ -49,6 +49,6 @@ if(NULLSPACE_BUILD_TESTS)
 endif()
 
 # ── CLI tools ───────────────────────────────────────────────────
-# if(NULLSPACE_BUILD_TOOLS)
-#     add_subdirectory(tools)
-# endif()
+if(NULLSPACE_BUILD_TOOLS)
+    add_subdirectory(tools)
+endif()

@@ -1,0 +1,11 @@
+{
+    "name": "example",
+    "epoch_tdb": 0.0,
+    "dt": 0.001,
+    "duration": 1.0,
+    "seed": 42,
+    "output": {
+        "format": "binary",
+        "directory": "output"
+    }
+}
