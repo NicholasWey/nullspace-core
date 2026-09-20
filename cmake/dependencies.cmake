@@ -8,9 +8,21 @@ FetchContent_Declare(
     GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
     GIT_TAG        3.4.0
     GIT_SHALLOW    TRUE
-    EXCLUDE_FROM_ALL
 )
-FetchContent_MakeAvailable(eigen)
+# Eigen is header-only. We use FetchContent_Populate to skip its legacy
+# CMakeLists.txt (Fortran, Qt, BLAS detection). CMP0169 (CMake 3.30+)
+# deprecates Populate; set it OLD to suppress that warning.
+if(POLICY CMP0169)
+    cmake_policy(PUSH)
+    cmake_policy(SET CMP0169 OLD)
+endif()
+FetchContent_GetProperties(eigen)
+if(NOT eigen_POPULATED)
+    FetchContent_Populate(eigen)
+endif()
+if(POLICY CMP0169)
+    cmake_policy(POP)
+endif()
 add_library(eigen_headers INTERFACE)
 target_include_directories(eigen_headers SYSTEM INTERFACE "${eigen_SOURCE_DIR}")
 add_library(Eigen3::Eigen ALIAS eigen_headers)

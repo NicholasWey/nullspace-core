@@ -1,6 +1,7 @@
 add_library(nullspace_core STATIC
     core/sim_clock.cpp
     core/seeded_rng.cpp
+    core/module.cpp
 )
 
 target_include_directories(nullspace_core
