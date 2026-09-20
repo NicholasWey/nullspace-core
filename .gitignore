@@ -1,0 +1,49 @@
+# Build
+build/
+out/
+cmake-build-*/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.sln
+*.vcxproj*
+*.user
+*.suo
+
+# Compiled objects
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.exe
+*.pdb
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Simulation output
+output/
+
+# Large data files (downloaded separately)
+data/ephemerides/*.bsp
+data/gravity/*.egm
+data/magnetic/*.wmm
+
+# Editor swap files
+*.swp
+*.swo
+*~
