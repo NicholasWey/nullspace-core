@@ -40,13 +40,13 @@ endif()
 include(cmake/dependencies.cmake)
 
 # ── Library target ──────────────────────────────────────────────
-# add_subdirectory(src)
+add_subdirectory(src)
 
 # ── Tests ───────────────────────────────────────────────────────
-# if(NULLSPACE_BUILD_TESTS)
-#     enable_testing()
-#     add_subdirectory(test)
-# endif()
+if(NULLSPACE_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(test)
+endif()
 
 # ── CLI tools ───────────────────────────────────────────────────
 # if(NULLSPACE_BUILD_TOOLS)
